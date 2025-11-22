@@ -1,5 +1,6 @@
 using FishNet.Object;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // Inherit from NetworkBehaviour instead of MonoBehaviour
 [RequireComponent(typeof(CharacterController))]
@@ -7,6 +8,12 @@ public class PlayerMovement : NetworkBehaviour
 {
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
+    public float jumpHeight = 2f;
+
+    public Transform cameraTransform;
+
+    public bool shouldFaceMovementDirection = false;
+
 
     private PlayerControls _playerControls;
     private CharacterController _characterController;
@@ -35,23 +42,34 @@ public class PlayerMovement : NetworkBehaviour
         if (!IsOwner)
             return;
 
-        // Apply gravity
-        if (_characterController.isGrounded && _velocity.y < 0)
+        Vector2 input = _playerControls.Player.Move.ReadValue<Vector2>();
+        bool isJumping = _playerControls.Player.Jump.ReadValue<float>() > 0;
+
+        if (isJumping && _characterController.isGrounded)
         {
-            _velocity.y = -2f; // Small downward force to keep grounded
+            _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        Vector2 input = _playerControls.Player.Move.ReadValue<Vector2>();
-        Vector3 moveDirection = new Vector3(input.x, 0f, input.y);
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
 
-        if (moveDirection.magnitude > 1f)
-            moveDirection.Normalize();
+        forward.y = 0;
+        right.y = 0;
 
-        // Move based on input
-        _characterController.Move(moveSpeed * Time.deltaTime * moveDirection);
+        forward.Normalize();
+        right.Normalize();
 
-        // Apply gravity over time
+        Vector3 moveDirection = forward * input.y + right * input.x;
+        _characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+        if (shouldFaceMovementDirection && moveDirection.sqrMagnitude > 0.001f)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * 10f);
+        }
+
         _velocity.y += gravity * Time.deltaTime;
         _characterController.Move(_velocity * Time.deltaTime);
+
     }
 }
