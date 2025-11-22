@@ -12,7 +12,9 @@ public class PlayerMovement : NetworkBehaviour
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
     public float jumpHeight = 1f;
-    
+
+    public bool CanMove = true;
+
     [Header("Stamina Settings")]
     public float jumpStaminaCost = 20f; // Amount of stamina to use per jump
 
@@ -49,6 +51,9 @@ public class PlayerMovement : NetworkBehaviour
         if (!IsOwner)
             return;
 
+        if (!CanMove)
+            return;
+
         Vector2 input = _playerControls.Player.Move.ReadValue<Vector2>();
         bool isJumping = _playerControls.Player.Jump.ReadValue<float>() > 0;
 
@@ -81,7 +86,7 @@ public class PlayerMovement : NetworkBehaviour
             {
                 // Apply Physics
                 _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-                
+
                 // Play Animation
                 networkAnimator.SetTrigger("Jump");
 
