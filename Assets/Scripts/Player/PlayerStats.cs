@@ -28,8 +28,7 @@ public class PlayerStats : NetworkBehaviour
         Stamina.Value = Mathf.Clamp(Stamina.Value + amount, 0, _maxStamina);
     }
 
-    [ServerRpc]
-    public void CmdTakeDamage(float amount)
+    public void TakeDamage(float amount)
     {
         Health.Value = Mathf.Clamp(Health.Value - amount, 0, _maxHealth);
     }

@@ -107,7 +107,7 @@ public class PlayerCombat : NetworkBehaviour
         if (target.TryGetComponent(out PlayerStats targetStats))
         {
             // Call the function you already wrote in PlayerStats
-            targetStats.CmdTakeDamage(damageAmount);
+            targetStats.TakeDamage(damageAmount);
 
             Debug.Log($"Hit registered on {target.name}");
         }
