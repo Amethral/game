@@ -54,6 +54,8 @@ public class PlayerCombat : NetworkBehaviour
         // 2. Check Stamina (Souls-like requirement)
         if (_playerStats.Stamina.Value < attackStaminaCost) return;
 
+        if (_playerMovement.IsGrounded == false) return;
+
         _playerMovement.CanMove = false;
 
         // 3. Consume Stamina
