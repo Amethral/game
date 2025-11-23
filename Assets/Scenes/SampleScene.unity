@@ -669,7 +669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4393252310584637056, guid: 0b650fca685f2eb41a86538aa883e4c1, type: 3}
       propertyPath: _autoStartType
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7443408887813606049, guid: 0b650fca685f2eb41a86538aa883e4c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -823,14 +823,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Transporting.Tugboat.Tugboat
   _stopSocketsOnThread: 0
   _dontRoute: 0
-  _reuseAddress: 1
+  _reuseAddress: 0
   _unreliableMtu: 1023
   _ipv4BindAddress: 
   _enableIpv6: 1
   _ipv6BindAddress: 
   _port: 7770
   _maximumClients: 4095
-  _clientAddress: localhost
+  _clientAddress: 89.168.55.58
 --- !u!114 &1550721664
 MonoBehaviour:
   m_ObjectHideFlags: 0

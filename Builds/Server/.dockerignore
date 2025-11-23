@@ -1,5 +1,0 @@
-# Fichiers à exclure du build Docker
-*.pdb
-*.log
-Dockerfile
-.dockerignore

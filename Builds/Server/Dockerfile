@@ -29,4 +29,5 @@ EXPOSE 7770/tcp
 # -batchmode : mode non-interactif
 # -nographics : pas de rendu graphique
 # -logFile : affiche les logs dans stdout
-CMD ["./server.x86_64", "-batchmode", "-nographics", "-logFile", "/dev/stdout"]
+CMD ["./server.x86_64", "-batchmode", "-nographics", "-logFile", "/dev/stdout", "-port", "7770", "-ip", "0.0.0.0"]
+
