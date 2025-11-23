@@ -598,7 +598,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 3.6
+  m_Height: 3.25
   m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -629,6 +629,9 @@ MonoBehaviour:
   - {fileID: 6580715043450387016}
   - {fileID: 5022936783385042089}
   - {fileID: 7863618233583232022}
+  - {fileID: 674150985770721187}
+  - {fileID: 5391864097922966499}
+  - {fileID: 5378178745750303761}
   InitializedParentNetworkBehaviour: {fileID: 0}
   InitializedNestedNetworkObjects: []
   RuntimeParentNetworkBehaviour: {fileID: 0}
@@ -799,9 +802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ed1bac27a0a5a43ba5d45f2a7b51af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _componentIndexCache: 255
+  _componentIndexCache: 5
   _addedNetworkObject: {fileID: 2405471646036117771}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 2405471646036117771}
   _maxHealth: 100
   _maxStamina: 100
   _staminaRegen: 10
@@ -840,9 +843,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19dcd9c849f00f4cbd183b3847634d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUI
-  _componentIndexCache: 255
+  _componentIndexCache: 6
   _addedNetworkObject: {fileID: 2405471646036117771}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 2405471646036117771}
   uiDocument: {fileID: 5148522561704465074}
 --- !u!114 &5378178745750303761
 MonoBehaviour:
@@ -856,9 +859,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9e665f2b159254eb4c4280aad870fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
-  _componentIndexCache: 255
+  _componentIndexCache: 7
   _addedNetworkObject: {fileID: 2405471646036117771}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 2405471646036117771}
   attackStaminaCost: 25
   attackRange: 1.5
   damageAmount: 20
