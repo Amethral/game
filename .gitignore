@@ -4,9 +4,11 @@
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
 [Mm]emoryCaptures/
+
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
+
 # Never commit these...
 *.csproj
 *.unityproj
@@ -23,5 +25,17 @@
 *.opendb
 *.VC.db
 *.DS_Store
+
 .vscode/
 .vs/
+
+# ---------------------
+# BUILD RULES
+# ---------------------
+
+# Ignore the whole Builds folder
+Builds/
+
+# BUT keep Builds/Server and its content
+!Builds/Server/
+!Builds/Server/**
