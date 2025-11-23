@@ -21,6 +21,8 @@ public class PlayerCombat : NetworkBehaviour
     private PlayerControls _playerControls;
     private PlayerMovement _playerMovement;
 
+    private CharacterController _characterController;
+
     // State
     private bool _isAttacking = false;
 
@@ -29,6 +31,7 @@ public class PlayerCombat : NetworkBehaviour
         _playerStats = GetComponent<PlayerStats>();
         _playerControls = new PlayerControls();
         _playerMovement = GetComponent<PlayerMovement>();
+        _characterController = GetComponent<CharacterController>();
     }
 
     private void OnEnable() => _playerControls.Enable();
@@ -54,7 +57,7 @@ public class PlayerCombat : NetworkBehaviour
         // 2. Check Stamina (Souls-like requirement)
         if (_playerStats.Stamina.Value < attackStaminaCost) return;
 
-        if (_playerMovement.IsGrounded == false) return;
+        if (_characterController.isGrounded == false) return;
 
         _playerMovement.CanMove = false;
 
