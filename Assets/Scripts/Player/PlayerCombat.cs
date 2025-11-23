@@ -70,7 +70,7 @@ public class PlayerCombat : NetworkBehaviour
     {
         _isAttacking = true;
         // Wait for rough length of animation before allowing another attack
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
         _isAttacking = false;
 
         _playerMovement.CanMove = true;
