@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UIDocument xmlns:ui="UnityEngine.UIElements"
+                   xmlns:engine="UnityEngine.UIElements"
+                   xmlns:uie="UnityEditor.UIElements"
+                   engine:class="login-page">
+
+    <ui:VisualElement class="login-container">
+        <ui:Label class="login-title" text="Login" />
+
+        <ui:VisualElement class="input-group">
+            <ui:Label text="Username" class="input-label"/>
+            <ui:TextField name="usernameField" class="input-field" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="input-group">
+            <ui:Label text="Password" class="input-label"/>
+            <ui:TextField name="passwordField" class="input-field" isPasswordField="true" />
+        </ui:VisualElement>
+
+        <ui:Button name="loginButton" class="login-button" text="Login" />
+
+        <ui:Label name="errorLabel" class="error-label" text="" />
+    </ui:VisualElement>
+
+</engine:UIDocument>
