@@ -1,15 +1,11 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Interfaces/Player/PlayerUI.uss?fileID=7433441132597879392&amp;guid=22aa9dca04006344788ba52796054b27&amp;type=3#PlayerUI" />
-    
-    <ui:VisualElement name="hudWrapper">
-        
-        <ui:VisualElement name="staminaContainer">
+    <ui:VisualElement name="hudWrapper" style="height: 72px; width: 174px; left: 1px; bottom: -3px; position: absolute; overflow: visible; flex-direction: column; flex-wrap: nowrap; flex-shrink: 1;">
+        <ui:VisualElement name="staminaContainer" style="margin-bottom: 12px;">
             <ui:VisualElement name="staminaFill" />
         </ui:VisualElement>
-
-        <ui:VisualElement name="healthContainer">
+        <ui:VisualElement name="healthContainer" style="margin-bottom: 12px;">
             <ui:VisualElement name="healthFill" />
         </ui:VisualElement>
-
     </ui:VisualElement>
 </ui:UXML>
