@@ -712,6 +712,7 @@ GameObject:
   - component: {fileID: 1321424926}
   - component: {fileID: 1321424924}
   - component: {fileID: 1321424923}
+  - component: {fileID: 1321424929}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -818,6 +819,20 @@ Transform:
   - {fileID: 714046549}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1321424929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321424922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba792343fb75db341b72e0866dcf58fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomPlayerSpawner
+  _playerPrefab: {fileID: 8321384069424763670, guid: 0f6c2e3a9d976094bb55a4f390062be2, type: 3}
+  _targetSceneName: Game
 --- !u!1 &1462000341
 GameObject:
   m_ObjectHideFlags: 0
