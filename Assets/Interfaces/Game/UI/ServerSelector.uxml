@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Interfaces/Game/UI/Menu.uss?fileID=7433441132597879392&amp;guid=e87ced536197c43f9990045a978f2555&amp;type=3#Menu" />
+    
+    <ui:VisualElement name="Background" class="menu">
+        <ui:VisualElement name="CenterAnchor" class="center-anchor">
+            
+            <ui:VisualElement name="ServerSelectionContainer" class="button-container">
+                <ui:Label text="SELECT SERVER" class="separator-text" style="font-size: 30px; margin-bottom: 20px; opacity: 1;" />
+                
+                <ui:Button name="MainServerBtn" class="button">
+                    <ui:Label text="MAIN SERVER" class="button-text" />
+                </ui:Button>
+                
+                <ui:Button name="DevServerBtn" class="button">
+                    <ui:Label text="DEV SERVER" class="button-text" />
+                </ui:Button>
+            </ui:VisualElement>
+            
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

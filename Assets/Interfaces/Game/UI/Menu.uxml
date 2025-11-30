@@ -1,14 +1,33 @@
-<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Interfaces/Game/UI/Menu.uss?fileID=7433441132597879392&amp;guid=e87ced536197c43f9990045a978f2555&amp;type=3#Menu" />
+    
     <ui:VisualElement name="Background" class="menu">
-        <ui:Button name="duck" class="duck" />
-    </ui:VisualElement>
-    <ui:VisualElement name="ButtonContainer" class="button-container">
-        <ui:VisualElement name="SignInButton" class="button">
-            <ui:Label text="SIGN IN" class="button-text" />
-        </ui:VisualElement>
-        <ui:VisualElement name="WorldButton" class="button">
-            <ui:Label text="🟢| EU #1" class="button-text" />
+        <ui:Button name="duck" tooltip="Quack!" class="duck" />
+
+        <ui:VisualElement name="CenterAnchor" class="center-anchor">
+            <ui:VisualElement name="Logo" class="logo" />
+
+            <ui:VisualElement name="FormContainer" class="button-container">
+                <ui:Label name="ErrorLabel" class="error-text" />
+                
+                <ui:TextField name="EmailInput" placeholder-text="Email Address" class="input-field" />
+                <ui:TextField name="PasswordInput" placeholder-text="Password" password="true" class="input-field" />
+                
+                <ui:Button name="SignInButton" class="button">
+                    <ui:Label text="SIGN IN" class="button-text" />
+                </ui:Button>
+                
+                <ui:Label name="RegisterLink" text="No account? Click here to register." class="link-text" />
+                
+                <ui:Label text="- OR -" class="separator-text" />
+                
+                <ui:VisualElement class="oauth-container">
+                    <ui:Button name="OAuthGoogle" text="G" tooltip="Login with Google" class="oauth-button" />
+                    <ui:Button name="OAuthApple" text="" tooltip="Login with Apple" class="oauth-button" />
+                    <ui:Button name="OAuthFacebook" text="f" tooltip="Login with Facebook" class="oauth-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -1,4 +1,6 @@
+/* --- 1. MAIN CONTAINER SETUP --- */
 .menu {
+    /* Full Screen Access */
     position: absolute;
     left: 0;
     top: 0;
@@ -6,66 +8,178 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url("project://database/Assets/Interfaces/Game/MenuLogo.png?fileID=2800000&guid=bfd500875ffcc47f7983882d609a4697&type=3#MenuLogo");
+
+    /* Background Image */
+    background-image: url("project://database/Assets/Interfaces/Game/menu.jpg?fileID=2800000&guid=bd1a2692d78744b488a51ee8e97f1ab9&type=3#menu");
     -unity-background-scale-mode: scale-to-fill;
+
+    /* LAYOUT ENGINE: Center everything vertically and horizontally */
+    display: flex;
+    align-items: center;      /* Horizontal Center */
+    justify-content: center;  /* Vertical Center */
 }
 
-.button-container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    width: 400px;
+/* --- 2. CENTER ANCHOR --- */
+/* This wraps the Logo and the Form so they stay together as one unit */
+.center-anchor {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    background-size: 103% 117%;
-    margin-top: 141px;
+    width: 100%;
+    /* No transforms! This ensures it sticks to the layout engine */
 }
 
-.button {
+/* --- 3. THE LOGO --- */
+.logo {
+    /* Use explicit size instead of scaling */
     width: 600px;
-    height: 200px;
+    height: 250px;
+    margin-bottom: 20px; /* Space between logo and form */
+
+    background-image: url("project://database/Assets/Interfaces/Game/TRANSPARENT_LOGO.png?fileID=2800000&guid=8072baa49895adb4d8d7a6fcbb788f5f&type=3#TRANSPARENT_LOGO");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+/* --- 4. THE LOGIN PANEL --- */
+.button-container {
+    background-color: rgba(20, 10, 30, 0.85);
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+
+    /* SIZE: Increased manually instead of using scale: 1.5 */
+    width: 500px;
+    padding: 30px 40px;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+
+    /* Shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* --- 5. INPUT FIELDS --- */
+.input-field {
+    height: 60px; /* Increased height */
+    font-size: 24px; /* Increased font */
+    margin-bottom: 5px;
+    color: white;
+}
+
+.input-field > .unity-base-text-field__input {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-width: 1px;
+    border-color: #444;
+    border-radius: 8px;
+    padding-left: 15px;
+    color: white;
+    -unity-text-align: middle-left;
+}
+
+.input-field:focus > .unity-base-text-field__input {
+    border-color: #a060ff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.unity-text-field__placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    -unity-font-style: italic;
+}
+
+/* --- 6. BUTTONS --- */
+.button {
+    height: 85px; /* Increased Size */
+    margin-top: 5px;
     background-color: transparent;
+
+    /* Assuming you have this texture, otherwise remove background-image */
     background-image: url("project://database/Assets/Interfaces/Game/UI/button1.png?fileID=2800000&guid=d6698709b079d456b86cf1dfb38d58e8&type=3#button1");
     -unity-background-scale-mode: stretch-to-fill;
+
     align-items: center;
     justify-content: center;
-    cursor: link;
-    transition-duration: 0.2s;
+    border-width: 0;
+    transition: scale 0.1s;
 }
 
-.button:hover {
-    scale: 1.05;
-}
+.button:hover { scale: 1.05; }
+.button:active { scale: 0.98; }
 
 .button-text {
-    width: 100%;
-    height: 100%;
-    font-size: 60px;
-    color: rgb(255, 255, 255);
+    font-size: 32px; /* Bigger font */
+    color: white;
+    -unity-font-style: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+/* --- 7. EXTRAS --- */
+.separator-text {
+    color: white;
+    font-size: 18px;
+    opacity: 0.7;
+    margin-top: 5px;
+    -unity-text-align: middle-center;
+}
+
+.oauth-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.oauth-button {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    transition: scale 0.1s;
+}
+
+.oauth-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    scale: 1.1;
+}
+
+.error-text {
+    font-size: 18px;
+    color: #ff5555;
     -unity-font-style: bold;
     -unity-text-align: middle-center;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-    margin: 0;
-    padding: 0;
-    -unity-text-auto-size: best-fit 10px 1000px;
-    background-size: 118% 100%;
+    min-height: 25px;
 }
 
 .duck {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 100;
+    left: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 80px;
     background-image: url("project://database/Assets/Interfaces/Game/UI/duck.png?fileID=2800000&guid=7ac6ea44106ce4d48922d00c36347451&type=3#duck");
-    background-color: rgba(255, 255, 255, 0);
-    width: 173px;
-    height: 139px;
-    background-position: left bottom;
     -unity-background-scale-mode: scale-to-fit;
-    background-size: 150px 100%;
-    flex-basis: auto;
-    flex-wrap: nowrap;
+    opacity: 0.8;
+}
+
+.link-text {
+    font-size: 20px;
+    color: #88ccff; /* Light blue indicating a link */
+    margin-top: 15px;
+    -unity-text-align: middle-center;
+    -unity-font-style: italic;
+    transition: color 0.1s;
+}
+
+.link-text:hover {
+    color: #ffffff; /* Turns white on hover */
+    cursor: link;
 }
