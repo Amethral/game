@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51901f6156f645a0b20a1911ac34d95e, type: 3}
   m_Name: AppConfig
   m_EditorClassIdentifier: Assembly-CSharp::AppConfig
-  DevelopmentApiUrl: http://localhost:5298/api/auth
+  DevelopmentApiUrl: https://amethral-api.amethystrealms.games/api/auth
   ProductionApiUrl: https://api.amethral.com/api/auth
-  DevelopmentRegisterUrl: http://localhost:4200/register
-  ProductionRegisterUrl: https://amethral.com/register
+  DevelopmentRegisterUrl: https://amethral.amethystrealms.games/register
+  ProductionRegisterUrl: https://amethral.amethystrealms.games/register
   IsProductionBuild: 0
